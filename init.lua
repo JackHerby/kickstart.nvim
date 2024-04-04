@@ -572,7 +572,17 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
+        tsserver = {
+          init_options = {
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                location = '/usr/local/lib/node_modules/@vue/typescript-plugin',
+                languages = { 'vue' },
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
@@ -590,7 +600,13 @@ require('lazy').setup({
         },
         cssls = {},
         html = {},
-        volar = {},
+        volar = {
+          init_options = {
+            vue = {
+              hybridMode = false,
+            },
+          },
+        },
         dockerls = {},
         docker_compose_language_service = {},
         yamlls = {},
