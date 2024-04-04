@@ -1,31 +1,14 @@
 return {
   -- https://github.com/nvim-tree/nvim-tree.lua
   'nvim-tree/nvim-tree.lua',
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',
+  },
   opts = {
     actions = {
       open_file = {
         window_picker = {
           enable = false,
-        },
-      },
-    },
-    renderer = {
-      highlight_git = 'name',
-      highlight_modified = 'name',
-      highlight_bookmarks = 'name',
-      highlight_clipboard = 'name',
-      indent_markers = {
-        enable = false,
-      },
-      icons = {
-        show = {
-          file = false,
-          folder = false,
-          folder_arrow = false,
-          git = false,
-          modified = false,
-          diagnostics = false,
-          bookmarks = false,
         },
       },
     },

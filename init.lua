@@ -201,10 +201,13 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 -- change all occurances of the word under the cursor
 vim.keymap.set(
   'n',
-  '<leader>rs',
+  '<leader>rr',
   [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = '[R]ename all occurances' }
 )
+
+-- open URL under cursor
+vim.keymap.set('n', 'gx', ':!open <c-r><c-a><CR>')
 
 -- JavaScript stuff
 vim.keymap.set('i', '<C-,>', '()')
@@ -697,8 +700,8 @@ require('lazy').setup({
         end)(),
         dependencies = {
           -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
-          'https://github.com/rafamadriz/friendly-snippets',
+          --  See the README about individual language/framework/plugin snippets:
+          -- 'https://github.com/rafamadriz/friendly-snippets',
           {
             'rafamadriz/friendly-snippets',
             config = function()
