@@ -1,47 +1,61 @@
 return {
   -- https://github.com/ThePrimeagen/harpoon
   'ThePrimeagen/harpoon',
-  branch = 'master',
-  event = 'VeryLazy',
+  branch = 'harpoon2',
   dependencies = {
     -- https://github.com/nvim-lua/plenary.nvim
     'nvim-lua/plenary.nvim',
   },
-  opts = {
-    menu = {
-      width = 120,
-    },
-  },
   config = function()
-    local keymap = vim.keymap
-    keymap.set('n', '<leader>ha', require('harpoon.mark').add_file)
-    keymap.set('n', '<leader>hh', require('harpoon.ui').toggle_quick_menu)
-    keymap.set('n', '<leader>h1', function()
-      require('harpoon.ui').nav_file(1)
+    local harpoon = require 'harpoon'
+    harpoon:setup {
+      settings = {
+        save_on_toggle = true,
+        sync_on_ui_close = true,
+      },
+    }
+
+    vim.keymap.set('n', '<leader>a', function()
+      harpoon:list():add()
     end)
-    keymap.set('n', '<leader>h2', function()
-      require('harpoon.ui').nav_file(2)
+    vim.keymap.set('n', '<leader>h', function()
+      harpoon.ui:toggle_quick_menu(harpoon:list())
     end)
-    keymap.set('n', '<leader>h3', function()
-      require('harpoon.ui').nav_file(3)
+
+    vim.keymap.set('n', '<C-1>', function()
+      harpoon:list():select(1)
     end)
-    keymap.set('n', '<leader>h4', function()
-      require('harpoon.ui').nav_file(4)
+    vim.keymap.set('n', '<C-2>', function()
+      harpoon:list():select(2)
     end)
-    keymap.set('n', '<leader>h5', function()
-      require('harpoon.ui').nav_file(5)
+    vim.keymap.set('n', '<C-3>', function()
+      harpoon:list():select(3)
     end)
-    keymap.set('n', '<leader>h6', function()
-      require('harpoon.ui').nav_file(6)
+    vim.keymap.set('n', '<C-4>', function()
+      harpoon:list():select(4)
     end)
-    keymap.set('n', '<leader>h7', function()
-      require('harpoon.ui').nav_file(7)
+    vim.keymap.set('n', '<C-5>', function()
+      harpoon:list():select(5)
     end)
-    keymap.set('n', '<leader>h8', function()
-      require('harpoon.ui').nav_file(8)
+    vim.keymap.set('n', '<C-6>', function()
+      harpoon:list():select(6)
     end)
-    keymap.set('n', '<leader>h9', function()
-      require('harpoon.ui').nav_file(9)
+    vim.keymap.set('n', '<C-7>', function()
+      harpoon:list():select(7)
+    end)
+    vim.keymap.set('n', '<C-8>', function()
+      harpoon:list():select(8)
+    end)
+    vim.keymap.set('n', '<C-9>', function()
+      harpoon:list():select(9)
+    end)
+
+    -- Toggle previous & next buffers stored within Harpoon list
+    vim.keymap.set('n', '<C-S-P>', function()
+      harpoon:list():prev()
+    end)
+    vim.keymap.set('n', '<C-S-N>', function()
+      harpoon:list():next()
     end)
   end,
 }
