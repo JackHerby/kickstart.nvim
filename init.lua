@@ -607,6 +607,7 @@ require('lazy').setup({
             },
           },
         },
+        pylsp = {},
         dockerls = {},
         docker_compose_language_service = {},
         yamlls = {},
@@ -628,6 +629,13 @@ require('lazy').setup({
         'eslint',
         'prettier',
         'prettierd',
+        'js-debug-adapter',
+        'black',
+        'debugpy',
+        'flake8',
+        'isort',
+        'mypy',
+        'pylint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
