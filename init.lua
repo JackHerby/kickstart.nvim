@@ -802,7 +802,7 @@ require('lazy').setup({
             end
           end, { 'i', 's' }),
           -- close autocomplete window
-          ['<C-c>'] = cmp.mapping.abort(),
+          ['<C-a>'] = cmp.mapping.abort(),
 
           -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
