@@ -145,8 +145,9 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+-- commented out since setting is used in ident blankie plugin
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -157,9 +158,17 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
--- My custom settings
 vim.opt.guicursor = ''
 vim.opt.colorcolumn = '120'
+
+-- tab settings
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+-- pressing tab will insert spaces according to the tabstop and shiftwidth settings
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+-- specifies the number of spaces to use for a tab character when editing a buffer
+vim.bo.softtabstop = 2
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -197,10 +206,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- My custom keymaps
-
--- exit insert mode
-vim.keymap.set('i', '<C-i>', '<ESC>')
 -- move selected block up and down with J and K
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
