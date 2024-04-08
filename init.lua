@@ -199,6 +199,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- My custom keymaps
 
+-- exit insert mode
+vim.keymap.set('i', '<C-i>', '<ESC>')
 -- move selected block up and down with J and K
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
