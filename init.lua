@@ -646,6 +646,7 @@ require('lazy').setup({
         'flake8',
         'isort',
         'mypy',
+        'markdownlint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
