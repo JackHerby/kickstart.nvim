@@ -143,5 +143,15 @@ return {
     end
 
     require('dap-python').setup '~/.pyenv/versions/neovim_python/bin/python'
+=======
+    -- Install golang specific config
+    require('dap-go').setup {
+      delve = {
+        -- On Windows delve must be run attached or it crashes.
+        -- See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
+        detached = vim.fn.has 'win32' == 0,
+      },
+    }
+>>>>>>> 5aeddfdd5d0308506ec63b0e4f8de33e2a39355f
   end,
 }
