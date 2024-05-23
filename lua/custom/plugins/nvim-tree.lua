@@ -5,6 +5,7 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   opts = {
+    disable_netrw = true,
     actions = {
       open_file = {
         window_picker = {
@@ -15,6 +16,9 @@ return {
     view = {
       width = 65,
       side = 'right',
+      number = true,
+      relativenumber = true,
+      cursorline = true,
     },
   },
   config = function(_, opts)

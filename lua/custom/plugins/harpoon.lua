@@ -49,6 +49,9 @@ return {
     vim.keymap.set('n', '<C-9>', function()
       harpoon:list():select(9)
     end)
+    vim.keymap.set('n', '<C-0>', function()
+      harpoon:list():select(10)
+    end)
 
     -- Toggle previous & next buffers stored within Harpoon list
     vim.keymap.set('n', '<C-S-P>', function()

@@ -170,6 +170,10 @@ vim.opt.autoindent = true
 -- specifies the number of spaces to use for a tab character when editing a buffer
 vim.bo.softtabstop = 2
 
+-- disable netrw completely
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -610,18 +614,6 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {
-          init_options = {
-            plugins = {
-              {
-                name = '@vue/typescript-plugin',
-                location = '/usr/local/lib/node_modules/@vue/typescript-plugin',
-                languages = { 'vue' },
-              },
-            },
-          },
-        },
-
         lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
@@ -636,8 +628,17 @@ require('lazy').setup({
             },
           },
         },
-        cssls = {},
-        html = {},
+        tsserver = {
+          init_options = {
+            plugins = {
+              {
+                name = '@vue/typescript-plugin',
+                location = '/usr/local/lib/node_modules/@vue/typescript-plugin',
+                languages = { 'vue' },
+              },
+            },
+          },
+        },
         volar = {
           init_options = {
             vue = {
@@ -645,6 +646,9 @@ require('lazy').setup({
             },
           },
         },
+        html = {},
+        cssls = {},
+        tailwindcss = {},
         pylsp = {},
         dockerls = {},
         docker_compose_language_service = {},
@@ -854,6 +858,13 @@ require('lazy').setup({
           { name = 'path' },
         },
       }
+      -- Setup up vim-dadbod
+      cmp.setup.filetype({ 'sql' }, {
+        sources = {
+          { name = 'vim-dadbod-completion' },
+          { name = 'buffer' },
+        },
+      })
     end,
   },
 
@@ -950,15 +961,15 @@ require('lazy').setup({
         'vimdoc',
         'javascript',
         'typescript',
+        'vue',
+        'html',
         'python',
         'lua',
         'bash',
         'css',
         'dockerfile',
-        'html',
         'php',
         'twig',
-        'vue',
         'yaml',
       },
       -- Autoinstall languages that are not installed
