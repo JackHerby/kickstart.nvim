@@ -228,8 +228,7 @@ vim.keymap.set('n', 'gx', ':!open <c-r><c-a><CR>')
 vim.keymap.set('i', '<C-,>', '()')
 vim.keymap.set('i', '<C-.>', '=>')
 vim.keymap.set('i', '<C-/>', '->')
-vim.keymap.set('i', '<C-;>', '_')
-vim.keymap.set('i', "<C-'>", '__')
+vim.keymap.set('i', '<C-;>', '__')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
