@@ -224,10 +224,12 @@ vim.keymap.set(
 -- open URL under cursor
 vim.keymap.set('n', 'gx', ':!open <c-r><c-a><CR>')
 
--- JavaScript stuff
+-- quality of life mappings
 vim.keymap.set('i', '<C-,>', '()')
 vim.keymap.set('i', '<C-.>', '=>')
-vim.keymap.set('i', '<C-/>', '() =>')
+vim.keymap.set('i', '<C-/>', '->')
+vim.keymap.set('i', '<C-;>', '_')
+vim.keymap.set('i', "<C-'>", '__')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
