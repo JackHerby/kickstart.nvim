@@ -10,7 +10,6 @@ return {
         javascript = { 'eslint' },
         typescript = { 'eslint' },
         vue = { 'eslint' },
-        python = { 'flake8', 'mypy' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

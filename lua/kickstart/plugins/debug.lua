@@ -29,11 +29,6 @@ return {
       version = '1.x',
       build = 'npm i && npm run compile vsDebugServerBundle && mv dist out',
     },
-    {
-      -- https://github.com/mfussenegger/nvim-dap-python
-      'mfussenegger/nvim-dap-python',
-      ft = 'python',
-    },
   },
   config = function()
     local dap = require 'dap'
@@ -142,6 +137,5 @@ return {
       }
     end
 
-    require('dap-python').setup '~/.pyenv/versions/neovim_python/bin/python'
   end,
 }
