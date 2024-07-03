@@ -93,7 +93,6 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
-
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -647,7 +646,6 @@ require('lazy').setup({
         },
         emmet_language_server = {},
         tailwindcss = {},
-        pylsp = {},
         dockerls = {},
         docker_compose_language_service = {},
         yamlls = {},
@@ -670,11 +668,6 @@ require('lazy').setup({
         'prettier',
         'prettierd',
         'js-debug-adapter',
-        'black',
-        'debugpy',
-        'flake8',
-        'isort',
-        'mypy',
         'markdownlint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
