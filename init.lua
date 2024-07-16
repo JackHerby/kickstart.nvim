@@ -93,6 +93,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
+-- Set Python executable path to use in Neovim integration
+vim.g.python3_host_prog = '~/.pyenv/versions/neovim_python/bin/python'
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -741,6 +744,7 @@ require('lazy').setup({
         json = { 'prettier', 'prettierd' },
         yaml = { 'prettier', 'prettierd' },
         markdown = { 'prettier', 'prettierd' },
+        python = { 'isort', 'black' },
       },
     },
   },
@@ -960,6 +964,7 @@ require('lazy').setup({
         'typescript',
         'vue',
         'html',
+        'python',
         'lua',
         'bash',
         'css',
